@@ -32,7 +32,7 @@ public class DrinkController {
 		return "drinks";
 	}
 	
-	@GetMapping("/drink/{id}")
+	@GetMapping("/{id}")
 	public String getDrink(@PathVariable("id") int id, Model model) {
 		
 		Optional<Drink> optDrink = drinkService.findDrinkById(id);
@@ -48,7 +48,7 @@ public class DrinkController {
 		return "drink";
 	}
 	
-	@GetMapping("/drink/create")
+	@GetMapping("/create")
 	public String createDrink(Model model) {
 		
 		Drink drink = new Drink();
@@ -57,15 +57,15 @@ public class DrinkController {
 		return "drink-create";
 	}
 	
-	@PostMapping("/drink/create")
+	@PostMapping("/create")
 	public String storeDrink(@Valid @ModelAttribute("drink") Drink drink) {
 		
 		drinkService.save(drink);
 		
-		return "redirect:/";
+		return "redirect:/drink";
 	}
 	
-	@GetMapping("/drink/update/{id}")
+	@GetMapping("/update/{id}")
 	public String editDrink(@PathVariable("id") int id, Model model) {
 		
 		Optional<Drink> optDrink = drinkService.findDrinkById(id);
@@ -76,15 +76,15 @@ public class DrinkController {
 		return "drink-update";
 	}
 	
-	@PostMapping("/drink/store")
+	@PostMapping("/store")
 	public String updateDrink(@Valid Drink drink) {
 		
 		drinkService.save(drink);		
 		
-		return "redirect:/";
+		return "redirect:/drink";
 	}
 	
-	@GetMapping("/drink/delete/{id}")
+	@GetMapping("/delete/{id}")
 	public String deleteDrink(@PathVariable("id") int id) {
 		
 		Optional<Drink> optDrink = drinkService.findDrinkById(id);
@@ -92,6 +92,6 @@ public class DrinkController {
 		
 		drinkService.delete(drink);
 		
-		return "redirect:/";
+		return "redirect:/drink";
 	}
 }
