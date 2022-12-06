@@ -9,15 +9,22 @@
 	</head>
 	<body th:object="${pizza}">
 		<div class="container text-center">
-			<a class="text-decoration-none text-black" href="/">
-			<h1 class="mt-3">Pizza</h1>
-			</a>
-	
-			([[*{id}]])
-			<a class="text-decoration-none" th:href="@{/pizza/{id} (id=*{id})}">
-				 [[*{nome}]]
-			</a>
-			<div>[[*{descrizione}]] - Prezzo: [[*{prezzo}]]€</div>
+
+			<h1 class="mt-3">PIZZA</h1>
+			
+			<div class="card text-center mt-4">
+			  <div class="card-header">
+			    Dettagli Pizza #[[*{id}]]
+			  </div>
+			  <div class="card-body">
+			    <h1 class="card-title">[[*{nome}]]</h1>
+			    <p class="card-text">[[*{descrizione}]]</p>
+			    <a href="/" class="btn btn-primary">Torna indietro</a>
+			  </div>
+			  <div class="card-footer text-muted">
+			    Prezzo: [[*{prezzo}]]€
+			  </div>
+			</div>
 		</div>
 		
 		<!-- Bootstrap Bundle with Popper -->

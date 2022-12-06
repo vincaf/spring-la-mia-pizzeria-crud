@@ -9,15 +9,23 @@
 	</head>
 	<body th:object="${drink}">
 		<div class="container text-center">
-			<a class="text-decoration-none text-black" href="/drink">
-			<h1 class="mt-3">Drink</h1>
+			<a class="text-decoration-none" href="/drink">
+			<h1 class="mt-3">DRINK</h1>
 			</a>
 	
-			([[*{id}]])
-			<a class="text-decoration-none" th:href="@{/drink/{id} (id=*{id})}">
-				 [[*{nome}]]
-			</a>
-			<div>[[*{descrizione}]] - Prezzo: [[*{prezzo}]]€</div>
+			<div class="card text-center mt-4">
+			  <div class="card-header">
+			    Dettagli Drink #[[*{id}]]
+			  </div>
+			  <div class="card-body">
+			    <h1 class="card-title">[[*{nome}]]</h1>
+			    <p class="card-text">[[*{descrizione}]]</p>
+			    <a href="/" class="btn btn-primary">Torna indietro</a>
+			  </div>
+			  <div class="card-footer text-muted">
+			    Prezzo: [[*{prezzo}]]€
+			  </div>
+			</div>
 		</div>
 		
 		<!-- Bootstrap Bundle with Popper -->
