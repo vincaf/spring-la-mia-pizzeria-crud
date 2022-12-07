@@ -23,16 +23,24 @@ public class DrinkService {
 		
 		return drinkRepo.findAll();
 	}
+	
 	public Optional<Drink> findDrinkById(int id) {
 		
 		return drinkRepo.findById(id);
 	}
+	
 	public void delete(Drink drink) {
 		
 		drinkRepo.delete(drink);
 	}
+	
 	public void deleteById(int id) {
 		
 		drinkRepo.deleteById(id);
+	}
+	
+	public List<Drink> findByNome(String nome){
+
+		return drinkRepo.findByNomeContainingIgnoreCase(nome);
 	}
 }
