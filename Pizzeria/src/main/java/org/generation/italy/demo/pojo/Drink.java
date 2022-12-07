@@ -30,7 +30,7 @@ public class Drink {
 	private String descrizione;
 	
 	@NotNull(message = "il prezzo non può essere vuoto")
-	@Min(value=1)
+	@Min(value=1, message = "il prezzo deve essere maggiore di zero")
 	private int prezzo;
 	
 	public Drink() { }
