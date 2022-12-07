@@ -88,7 +88,7 @@ public class DrinkController {
 
 		if(bindingResult.hasErrors()) {
 			redirectAttributes.addFlashAttribute("errors", bindingResult.getAllErrors());
-			return "redirect:/drink/edit/" + drink.getId();
+			return "redirect:/drink/update/" + drink.getId();
 		}
 		
 		drinkService.save(drink);		

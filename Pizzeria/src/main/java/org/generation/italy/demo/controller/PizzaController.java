@@ -88,7 +88,7 @@ public class PizzaController {
 		
 		if(bindingResult.hasErrors()) {
 			redirectAttributes.addFlashAttribute("errors", bindingResult.getAllErrors());
-			return "redirect:/pizza/edit/" + pizza.getId();
+			return "redirect:/pizza/update/" + pizza.getId();
 		}
 		
 		pizzaService.save(pizza);		
