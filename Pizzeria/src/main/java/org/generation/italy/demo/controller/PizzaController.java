@@ -126,7 +126,7 @@ public class PizzaController {
 							? pizzaService.findAll()
 							: pizzaService.findByNome(query); 
 
-		model.addAttribute("pizze", pizzas);
+		model.addAttribute("pizzas", pizzas);
 		model.addAttribute("query", query);
 
 		return "pizzas-search";
