@@ -129,6 +129,6 @@ public class PizzaController {
 		model.addAttribute("pizze", pizzas);
 		model.addAttribute("query", query);
 
-		return "pizze-search";
+		return "pizzas-search";
 	}
 }
