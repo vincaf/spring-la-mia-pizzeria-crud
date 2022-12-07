@@ -29,7 +29,7 @@ public class Drink {
 	@Nullable
 	private String descrizione;
 	
-	@NotNull
+	@NotNull(message = "il prezzo non può essere vuoto")
 	@Min(value=1)
 	private int prezzo;
 	

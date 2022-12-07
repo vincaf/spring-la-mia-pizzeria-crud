@@ -20,14 +20,14 @@ public class Pizza {
 	
 	@NotNull
 	@NotEmpty(message = "il nome deve contenere qualcosa")
-	@Column(length = 128)
+	@Column(unique = true)
 	private String nome;
 	
 	@NotNull
 	private String descrizione;
 	
-	@NotNull
-	@Min(value=0)
+	@NotNull(message = "il prezzo non può essere vuoto")
+	@Min(value=1)
 	private int prezzo;
 	
 	public Pizza() { }
