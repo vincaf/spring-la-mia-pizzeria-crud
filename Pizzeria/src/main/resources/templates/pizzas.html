@@ -10,7 +10,10 @@
 	<body>
 		<div class="container">
 			<h1 class="mt-2">Pizze</h1>
+			
 			<a class="nav-link" href="/pizza/create" >> AGGIUNGI UNA PIZZA</a>
+			<a class="nav-link" href="/search">> CERCA UNA PIZZA</a>
+			
 			<ul class="list-group">
 				<li class="list-group-item"
 					th:each="pizza : ${pizzas}"
@@ -30,6 +33,7 @@
 					</a>
 				</li>
 			</ul>
+			
 			<div class="text-center mt-2">
 				<a class="btn btn-warning" href="/drink" >Vai ai Drink</a>
 			</div>
